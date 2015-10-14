@@ -1,0 +1,21 @@
+FROM node:latest
+
+ENV BOTDIR /opt/bot
+ENV HUBOT_PORT 9090
+ENV HUBOT_ADAPTER slack
+ENV HUBOT_NAME BooBot
+ENV PORT ${HUBOT_PORT}
+
+
+ENV HUBOT_SLACK_TOKEN <Put Slack Token Here>
+
+EXPOSE ${HUBOT_PORT}
+
+WORKDIR ${BOTDIR}
+
+COPY . ${BOTDIR}
+
+RUN npm install -g coffee-script
+RUN npm install
+
+CMD bin/hubot 
