@@ -34,6 +34,22 @@ Then you can interact with BooBot by typing `BooBot help`.
     BooBot help - Displays all of the help commands that BooBot knows about.
     ...
 
+### Running BooBot with docker
+  
+First you will want to make sure you have docker installed.  If you do not, you can follow one of the guides on [docker.com]: https://docs.docker.com/installation/
+After you have docker installed you will want to copy the Dockerfile.sample to Dockerfile
+
+    cp Dockerfile.sample Dockerfile
+
+Then you should open up the Dockerfile and fill in any missing env variables (ex. HUBOT_SLACK_TOKEN)
+Once you have all your env variables you should be able to build the BooBot image on your local machine
+
+    sudo docker build -t boobot /path/to/BooBot
+
+Once the image is done building on your machine you should be able to run boobot with the following command
+    
+    sudo docker run --name BooBot boobot
+
 ### Configuration
 
 A few scripts (including some installed by default) require environment
