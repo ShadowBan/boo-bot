@@ -8,6 +8,7 @@ ENV PORT ${HUBOT_PORT}
 
 
 ENV HUBOT_SLACK_TOKEN <Put Slack Token Here>
+ENV DATABASE_URL <Put Postgres URL Here>
 
 EXPOSE ${HUBOT_PORT}
 
