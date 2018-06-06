@@ -38,6 +38,7 @@ module.exports = (robot) ->
     client.on "error", (err) ->
       robot.logger.error err
 
-    client.query('INSERT INTO test (url) VALUES ($1)', [res.match.join('')])
+    current_date =  new Date();
+    client.query('INSERT INTO links ("url", "full_comment", "user", "inserted_at", "updated_at") VALUES ($1, $2, $3, $4, $4)', [res.match.join(''), res.message.text, res.message.user.name, current_date])
 
 
